@@ -96,7 +96,7 @@ function DFAComponent() {
                     <div className=" text-center bg-white p-3 border-round-sm font-bold border-500 hover:border-700 border-3 border-round m-2" style={{ minWidth: 800, minHeight: 150 }}>
                         <div className="p-inputgroup flex-1 p-3 flex align-items-center justify-content-center">
                             <p className=" text-4xl text-indigo-500 mt-0 pr-5">INGRESE CADENA</p>
-                            <InputText placeholder="Cadena" value={inputValue} onChange={handleInputChange} />
+                            <InputText placeholder="ingrese Cadena" value={inputValue} onChange={handleInputChange} />
                             <Button onClick={handleSubmit} type="submit" label="Submit" />
                         </div>
                         <p className='text-color'>{result}</p>
