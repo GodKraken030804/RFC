@@ -11,8 +11,15 @@ class Automaton {
         this.final_states = [3];
         this.alphabet = ['M', 'O', 'G', 'J', 'g', 'o', 'g', 'j'];
         this.transition_table = {
-            '0-m': 1, '1-m': 1, '1-o': 2, '2-o': 2, '2-g': 3, '3-g': 3, "3-j": 4, "4-j": 4,  
-            '0-M': 1, '1-M': 1, '1-O': 2, '2-O': 2, '2-G': 3, '3-G': 3, "3-J": 4, "4-J": 4
+            
+            '0-m': 1, '0-M': 1, '1-m': 1, '1-M': 1,
+            '1-o': 2, '1-O': 2, '2-o': 2, '2-O': 2,
+            '2-g': 3, '2-G': 3, '3-g': 3, '3-G': 3,
+            '3-j': 4, '3-J': 4, '4-j': 4, '4-J': 4,
+            '1-o': 2, '1-O': 2, '1-g': 3, '1-G': 3, '1-j': 4, '1-J': 4,
+            '2-m': 1, '2-M': 1, '2-g': 3, '2-G': 3, '2-j': 4, '2-J': 4,
+            '3-m': 1, '3-M': 1, '3-o': 2, '3-O': 2, '3-j': 4, '3-J': 4,
+            '4-m': 1, '4-M': 1, '4-o': 2, '4-O': 2, '4-g': 3, '4-G': 3
         };
         this.current_state = 0;
     }
@@ -101,11 +108,11 @@ function DFAComponent() {
                         </div>
                         <p className='text-color'>{result}</p>
                         <div className="static bottom-0 left-0  border-round p-4 font-bold " style={{ minWidth: 120, minHeight: 70, position: 'relative' }}>
-                            <div>
-                            <p className='text-3xl'>
+                            <div >
+                            <p className='text-3xl' >
                                 {highlightedLetters.map((letterObj, index) => (
                                     <React.Fragment key={index}>
-                                        <span style={{ color: letterObj.isValid ? 'blue' : 'black', fontWeight: letterObj.isValid ? 'bold' : 'normal' }}>
+                                        <span style={{  border: '2px solid', borderRadius: '100px', padding: '20px', display: 'inline-block', color: letterObj.isValid ? 'blue' : 'black', fontWeight: letterObj.isValid ? 'bold' : 'normal' }}>
                                             {letterObj.letter}
                                         </span>
                                         {index !== highlightedLetters.length - 1 && <span>&rarr;</span>}
