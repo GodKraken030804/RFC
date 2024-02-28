@@ -112,7 +112,7 @@ function DFAComponent() {
                             <p className='text-3xl' >
                                 {highlightedLetters.map((letterObj, index) => (
                                     <React.Fragment key={index}>
-                                        <span style={{  border: '2px solid', borderRadius: '100px', padding: '20px', display: 'inline-block', color: letterObj.isValid ? 'blue' : 'black', fontWeight: letterObj.isValid ? 'bold' : 'normal' }}>
+                                        <span style={{  border: '2px solid', borderRadius: '100px', padding: '10px', display: 'inline-block', color: letterObj.isValid ? 'blue' : 'black', fontWeight: letterObj.isValid ? 'bold' : 'normal' }}>
                                             {letterObj.letter}
                                         </span>
                                         {index !== highlightedLetters.length - 1 && <span>&rarr;</span>}
